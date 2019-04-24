@@ -6,6 +6,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayScreen: UILabel!
     
     var isTyping: Bool = false
+    var calculatorBrain = CalculatorFunctional()
     var displayText: String {
         get {return displayScreen.text!}
         set {displayScreen.text = newValue}
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
     
     @IBAction func operation(_ sender: UIButton) {
         guard let buttonName = sender.currentTitle else {return}
-        displayText = function(name: buttonName, arg: displayText)
+        displayText = calculatorBrain.function(name: buttonName, arg: displayText)
         isTyping = false
     }
 }
