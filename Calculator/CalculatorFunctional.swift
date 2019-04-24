@@ -61,6 +61,7 @@ struct CalculatorFunctional{
             return accumulator
         }
     }
+    
     mutating func calculate(_ arg1: Double, function: (Double, Double) -> String,_ arg2: Double) -> String{
         return function(arg1, arg2)
     }
